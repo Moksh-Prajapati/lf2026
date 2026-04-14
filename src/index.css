@@ -1,5 +1,5 @@
 :root {
-  --teal: #0d9488;
+  --teal: #0a7c71;
   --teal-dark: #0a7c71;
   --teal-light: #14b8a6;
   --pink: #ec4899;
@@ -33,10 +33,11 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--dark);
+  background-color: #072E2C;
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ============ 3D CANVAS (fixed behind hero) ============ */
@@ -46,7 +47,9 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: 0;
+  touch-action: pan-y;
 }
 
 /* ============ LOADING SCREEN ============ */
@@ -54,7 +57,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: var(--dark);
+  background: #072E2C;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +67,14 @@ body {
 .loading-content {
   text-align: center;
   padding: 2rem;
+}
+
+.loading-gif {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  filter: drop-shadow(0 4px 20px rgba(236, 72, 153, 0.3));
 }
 
 .loading-logo {
@@ -136,6 +147,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: 50;
   pointer-events: none;
   display: flex;
@@ -153,7 +165,7 @@ body {
   justify-content: space-between;
   padding: 1rem 1.5rem;
   pointer-events: auto;
-  background: linear-gradient(180deg, rgba(15,23,42,0.7) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(7,46,44,0.75) 0%, transparent 100%);
 }
 
 .nav-logos {
@@ -235,7 +247,7 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
-  background: linear-gradient(0deg, rgba(15,23,42,0.5) 0%, transparent 100%);
+  background: linear-gradient(0deg, rgba(7,46,44,0.6) 0%, transparent 100%);
 }
 
 /* ============ COUNTDOWN ============ */
@@ -386,7 +398,7 @@ body {
 
 .content-section-full {
   padding: 5rem 2rem;
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(7, 46, 44, 0.94);
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -531,9 +543,9 @@ body {
 /* ============ ITINERARY SECTION (Redesigned) ============ */
 .itinerary-section {
   background: linear-gradient(180deg,
-    rgba(15, 23, 42, 0.92) 0%,
-    rgba(13, 20, 38, 0.96) 50%,
-    rgba(15, 23, 42, 0.92) 100%) !important;
+    rgba(7, 46, 44, 0.94) 0%,
+    rgba(5, 35, 33, 0.97) 50%,
+    rgba(7, 46, 44, 0.94) 100%) !important;
 }
 
 .itin-title {
@@ -897,7 +909,7 @@ body {
 
 /* ============ FOOTER ============ */
 .site-footer {
-  background: var(--dark);
+  background: #072E2C;
   border-top: 1px solid rgba(255,255,255,0.08);
   position: relative;
   z-index: 10;
@@ -997,7 +1009,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: var(--dark);
+  background: #072E2C;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1059,9 +1071,9 @@ body {
   .hero-bottom {
     flex-direction: column;
     align-items: center;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem 1rem;
     gap: 0.5rem;
-    background: linear-gradient(0deg, rgba(15,23,42,0.75) 0%, transparent 100%);
+    background: linear-gradient(0deg, rgba(7,46,44,0.75) 0%, transparent 100%);
   }
 
   .countdown-card {
@@ -1091,7 +1103,7 @@ body {
     right: 0.35rem;
     gap: 0.25rem;
     top: auto;
-    bottom: 50%;
+    bottom: 40%;
     transform: translateY(50%);
   }
   .social-link {

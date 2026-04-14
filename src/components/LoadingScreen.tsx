@@ -42,6 +42,11 @@ export default function LoadingScreen() {
   return (
     <div ref={containerRef} className="loading-screen">
       <div className="loading-content">
+        <img
+          src="/images/dj-jamming.gif"
+          alt="DJ Jamming"
+          className="loading-gif"
+        />
         <div className="loading-logo">
           <span className="loading-le">LE</span>
           <span className="loading-fiestus">FIESTUS</span>
