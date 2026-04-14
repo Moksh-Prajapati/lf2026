@@ -9,7 +9,7 @@ interface ItineraryItem {
   performer: string
   time: string
   venue: string
-  type: 'concert' | 'dj' | 'poetry' | 'comedy' | 'band'
+  type: 'concert' | 'dj' | 'poetry' | 'comedy' | 'band' | 'singer'
   image?: string
 }
 
@@ -18,7 +18,7 @@ const ITINERARY: ItineraryItem[] = [
   { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.png' },
   { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.png' },
   { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.png' },
-  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/anuj-sharma.png' },
+  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'singer', image: '/images/artists/anuj-sharma.png' },
   { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.png' },
   { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.png' },
   { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.png' },
@@ -32,6 +32,7 @@ const TYPE_COLORS: Record<string, string> = {
   poetry: '#8b5cf6',
   comedy: '#f97316',
   band: '#14b8a6',
+  singer: '#f43f5e'
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -40,6 +41,7 @@ const TYPE_LABELS: Record<string, string> = {
   poetry: 'Poetry',
   comedy: 'Stand Up Comedy',
   band: 'Band',
+  singer: 'Singer',
 }
 
 /* =========================================================
