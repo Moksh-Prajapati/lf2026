@@ -18,15 +18,14 @@ function App() {
           dpr={[1, Math.min(isMobile ? 1.5 : 2, window.devicePixelRatio)]}
           gl={{
             antialias: !isMobile,
-            alpha: false,
+            alpha: true,
             powerPreference: 'high-performance',
             stencil: false,
           }}
           shadows={!isMobile}
-          style={{ background: '#0d9488' }}
+          style={{ background: 'linear-gradient(to right, #7f1d1d, #be185d, #a855f7)' }}
         >
-          <color attach="background" args={['#0d9488']} />
-          <fog attach="fog" args={['#0a7c71', isMobile ? 20 : 30, isMobile ? 45 : 55]} />
+          <fog attach="fog" args={['#be185d', isMobile ? 20 : 30, isMobile ? 45 : 55]} />
 
           <Suspense fallback={null}>
             <FestivalPlaza />
