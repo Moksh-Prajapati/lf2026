@@ -14,16 +14,16 @@ interface ItineraryItem {
 }
 
 const ITINERARY: ItineraryItem[] = [
-  { date: '24 April', day: 'Friday', performer: 'Snehi Live', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/snehi-live.png' },
-  { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.png' },
-  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.png' },
-  { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.png' },
-  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'singer', image: '/images/artists/anuj-sharma.png' },
-  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.png' },
-  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.png' },
-  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.png' },
-  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/simar-kaur.png' },
-  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-ana.png' },
+  { date: '24 April', day: 'Friday', performer: 'Snehi Live', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/snehi-live.webp' },
+  { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.webp' },
+  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.webp' },
+  { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.webp' },
+  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'singer', image: '/images/artists/anuj-sharma.webp' },
+  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.webp' },
+  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.webp' },
+  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.webp' },
+  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/simar-kaur.webp' },
+  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-ana.webp' },
 ]
 
 const TYPE_COLORS: Record<string, string> = {
