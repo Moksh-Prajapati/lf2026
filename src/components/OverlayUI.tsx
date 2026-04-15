@@ -291,10 +291,11 @@ export default function OverlayUI() {
         <div className="content-section-full itinerary-section" id="itinerary">
           <div className="content-inner">
             <span className="section-tag reveal-item" style={{ background: '#ec4899' }}>24&ndash;26 APRIL 2026</span>
+            {/*
             <h2 className="itin-title reveal-item" data-delay="100">The Lineup</h2>
             <p className="itin-subtitle reveal-item" data-delay="150">Three nights. Ten acts. One unforgettable experience.</p>
 
-            {/* Day filter tabs */}
+            {/* Day filter tabs * /}
             <div className="itin-tabs reveal-item" data-delay="200">
               <button
                 className={`itin-tab ${activeDay === null ? 'itin-tab--active' : ''}`}
@@ -313,13 +314,13 @@ export default function OverlayUI() {
               ))}
             </div>
 
-            {/* Timeline */}
+            {/* Timeline * /}
             <div className="itin-timeline">
               {filteredDays.map((date, dayIdx) => {
                 const dayItems = ITINERARY.filter((i) => i.date === date)
                 return (
                   <div key={date} className="itin-day-block reveal-item" data-delay={String(300 + dayIdx * 150)}>
-                    {/* Day header */}
+                    {/* Day header * /}
                     <div className="itin-day-head">
                       <div className="itin-day-circle">
                         <span className="itin-day-circle-num">{date.split(' ')[0]}</span>
@@ -331,7 +332,7 @@ export default function OverlayUI() {
                       </div>
                     </div>
 
-                    {/* Performance cards */}
+                    {/* Performance cards * /}
                     <div className="itin-performances">
                       {dayItems.map((item, idx) => (
                         <div
@@ -342,7 +343,7 @@ export default function OverlayUI() {
                             '--accent': TYPE_COLORS[item.type],
                           } as React.CSSProperties}
                         >
-                          {/* Artist image */}
+                          {/* Artist image * /}
                           {item.image && (
                             <div className="itin-perf-image">
                               <img
@@ -372,7 +373,7 @@ export default function OverlayUI() {
                             </div>
                           </div>
 
-                          {/* Decorative accent stripe */}
+                          {/* Decorative accent stripe * /}
                           <div className="itin-perf-stripe" style={{ background: TYPE_COLORS[item.type] }} />
                         </div>
                       ))}
@@ -381,6 +382,8 @@ export default function OverlayUI() {
                 )
               })}
             </div>
+            */}
+            <h2 className="itin-title reveal-item" data-delay="100">COMING SOON</h2>
           </div>
         </div>
 
