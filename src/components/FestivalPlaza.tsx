@@ -36,7 +36,7 @@ export default function FestivalPlaza() {
     canvas.height = 512
     const c = canvas.getContext('2d')!
 
-    c.fillStyle = '#0d9488'
+    c.fillStyle = '#bd6bab'
     c.fillRect(0, 0, 512, 512)
 
     c.fillStyle = 'rgba(0, 0, 0, 0.035)'
@@ -119,15 +119,15 @@ export default function FestivalPlaza() {
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.6, 0]} receiveShadow>
         <planeGeometry args={[150, 150]} />
-        <meshStandardMaterial map={groundTexture} roughness={0.85} color="#0d9488" />
+        <meshStandardMaterial map={groundTexture} roughness={0.85} color="#bd6bab" />
       </mesh>
 
       <ContactShadows
-        opacity={0.3}
+        opacity={0.5}
         scale={40}
         blur={2}
         far={6}
-        color="#053d36"
+        color="#020617"
         position={[0, -3.58, 0]}
       />
     </>

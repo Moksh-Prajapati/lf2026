@@ -1,2 +1,26 @@
-# Auto detect text files and perform LF normalization
+import React from "react";
+import loader from "./gif/dj-jamming (1).gif";
+
+const Loader = () => {
+  return (
+    <div style={styles.container}>
+      <img src={loader} alt="loading..." style={styles.gif} />
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    height: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#000", // change if needed
+  },
+  gif: {
+    width: "200px", // adjust size
+  },
+};
+
+export default Loader;# Auto detect text files and perform LF normalization
 * text=auto

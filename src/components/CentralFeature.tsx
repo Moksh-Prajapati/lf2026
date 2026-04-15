@@ -175,39 +175,38 @@ function DJFrankWithConsole() {
     Object.values(cActions).forEach((a) => a?.play())
   }, [fActions, cActions])
 
-  const frankBaseScale = isMobile ? 1.1 : 2
-  const consoleBaseScale = isMobile ? 0.55 : 0.9
-  const frankX = isMobile ? 5 : 10
-  const consoleX = isMobile ? 4.5 : 9
+  const frankBaseScale = isMobile ? 1.4 : 2.5
+  const consoleBaseScale = isMobile ? 1.3 : 2.0
+  const frankX = 0
+  const consoleX = 0
 
   useFrame((state) => {
-    const progress = Math.min(window.scrollY / window.innerHeight, 1)
     const t = state.clock.elapsedTime
     if (frankRef.current) {
       frankRef.current.position.set(
-        frankX + progress * 12,
-        -2.8 + Math.sin(t * 1.2) * 0.04 - progress * 3,
-        -1,
+        frankX,
+        -2.8 + Math.sin(t * 1.2) * 0.04,
+        -1.5,
       )
-      frankRef.current.rotation.y = -0.4 + progress * 0.8
-      frankRef.current.scale.setScalar(frankBaseScale * (1 - progress * 0.7))
+      frankRef.current.rotation.y = 0
+      frankRef.current.scale.setScalar(frankBaseScale)
     }
     if (consoleRef.current) {
       consoleRef.current.position.set(
-        consoleX + progress * 10,
-        -3.2 + Math.sin(t * 1.4) * 0.02 - progress * 2,
-        2,
+        consoleX,
+        -3.2 + Math.sin(t * 1.4) * 0.02,
+        3.0,
       )
-      consoleRef.current.scale.setScalar(consoleBaseScale * (1 - progress * 0.7))
+      consoleRef.current.scale.setScalar(consoleBaseScale)
     }
   })
 
   return (
     <>
-      <group ref={frankRef} position={[frankX, -2.8, -1]} scale={frankBaseScale} rotation={[0, -0.4, 0]}>
+      <group ref={frankRef} position={[frankX, -2.8, -1.5]} scale={frankBaseScale} rotation={[0, 0, 0]}>
         <primitive object={fClone} />
       </group>
-      <group ref={consoleRef} position={[consoleX, -3.2, 2]} scale={consoleBaseScale}>
+      <group ref={consoleRef} position={[consoleX, -3.2, 3.0]} scale={consoleBaseScale} rotation={[0, -Math.PI / 2, 0]}>
         <primitive object={cClone} />
       </group>
     </>
@@ -377,10 +376,15 @@ function StageMarker({ position, color, mobileSf }: {
    MAIN EXPORT
    ========================================================= */
 export default function CentralFeature() {
-  const { isMobile, sf } = useResponsive()
+  const { isMobile, isTablet, sf } = useResponsive()
   // shorthand for mobileSf prop
   const m = sf
-
+  const primaryHeadphonesPos1: [number, number, number] = (isMobile || isTablet)
+    ? [-6, 6, -4]
+    : [-11, 3, -3] // Adjust the desktop position here
+  const primaryHeadphonesPos2: [number, number, number] = (isMobile || isTablet)
+    ? [4, 6, 6]
+    : [9, 3, 4] // Adjust the desktop position here
   return (
     <group>
       <HeroTitle />
@@ -391,9 +395,9 @@ export default function CentralFeature() {
       {/* ── LEFT EDGE ── */}
       <GLBModel
         url="/models/fender_electric_guitar_3d_model.glb"
-        position={[-10, -1, 0]}
+        position={[-7, -1, 2]}
         scale={3.5}
-        rotation={[0, 0.7, -0.12]}
+        rotation={[0, 1, -0.12]}
         hoverScale={1.06}
         hoverSound={playJazzLick}
         floatY={0.08}
@@ -402,8 +406,8 @@ export default function CentralFeature() {
 
       <GLBModel
         url="/models/vintage_boombox_final.glb"
-        position={[-7, -3.2, 4]}
-        scale={0.03}
+        position={[-10, -3.2, 4]}
+        scale={0.06}
         rotation={[0, 0.4, 0]}
         hoverScale={1.08}
         hoverSound={play8BitBeat}
@@ -422,7 +426,7 @@ export default function CentralFeature() {
 
       <GLBModel
         url="/models/retro_microphone.glb"
-        position={[-5, -2.8, 6]}
+        position={[-7, -2.9, 7]}
         scale={0.005}
         rotation={[0, 0.3, 0]}
         hoverScale={1.08}
@@ -433,7 +437,7 @@ export default function CentralFeature() {
       {/* ── RIGHT EDGE ── */}
       <GLBModel
         url="/models/cactus_lowpoly.glb"
-        position={[13, -3.5, 3]}
+        position={[10, -3.5, 3]}
         scale={2.2}
         floatY={0.03}
         floatSpeed={0.8}
@@ -443,10 +447,10 @@ export default function CentralFeature() {
       {/* Boombox #2 — right ground */}
       <GLBModel
         url="/models/vintage_boombox_final.glb"
-        position={[12, -3.2, 5]}
-        scale={0.024}
+        position={[10, -3.2, 5]}
+        scale={0.06}
         rotation={[0, -0.5, 0]}
-        hoverScale={1.06}
+        hoverScale={1.08}
         hoverSound={play8BitBeat}
         floatY={0.025}
         floatSpeed={1.2}
@@ -456,8 +460,8 @@ export default function CentralFeature() {
       {/* Retro Mic #2 */}
       <GLBModel
         url="/models/retro_microphone.glb"
-        position={[6, -2.9, 7]}
-        scale={0.004}
+        position={[7, -2.9, 7]}
+        scale={0.005}
         rotation={[0, -0.4, 0]}
         hoverScale={1.06}
         floatY={0.035}
@@ -479,7 +483,7 @@ export default function CentralFeature() {
       {/* ── UPPER FLOATING LAYER ── */}
       <GLBModel
         url="/models/headphones_final.glb"
-        position={[-8, 6, -4]}
+        position={primaryHeadphonesPos1}
         scale={1.5}
         floatY={0.25}
         floatSpeed={1.5}
@@ -498,8 +502,8 @@ export default function CentralFeature() {
 
       <GLBModel
         url="/models/pretty_simple_discoball_final.glb"
-        position={[-5, 8, -6]}
-        scale={1.5}
+        position={[-4.2, 7, 0]}
+        scale={1.3}
         spinSpeed={0.02}
         floatY={0.15}
         floatSpeed={1.0}
@@ -513,7 +517,7 @@ export default function CentralFeature() {
           <DiscoBallWithLight pos={[-12, 9, -8]} mobileSf={m} />
           <GLBModel
             url="/models/headphones_final.glb"
-            position={[12, 5, -3]}
+            position={primaryHeadphonesPos2}
             scale={1.0}
             floatY={0.18}
             floatSpeed={1.2}
@@ -529,8 +533,8 @@ export default function CentralFeature() {
           />
           <GLBModel
             url="/models/pretty_simple_discoball_final.glb"
-            position={[10, 6, -5]}
-            scale={1.0}
+            position={[4.2, 7, 0]}
+            scale={1.3}
             spinSpeed={0.015}
             floatY={0.12}
             floatSpeed={0.9}

@@ -1,3 +1,4 @@
+import loader from "../gif/dj.gif";
 import { useProgress } from '@react-three/drei'
 import { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap'
@@ -42,6 +43,7 @@ export default function LoadingScreen() {
   return (
     <div ref={containerRef} className="loading-screen">
       <div className="loading-content">
+        <img src={loader} alt="loading..." className="loading-gif" />
         <div className="loading-logo">
           <span className="loading-le">LE</span>
           <span className="loading-fiestus">FIESTUS</span>
