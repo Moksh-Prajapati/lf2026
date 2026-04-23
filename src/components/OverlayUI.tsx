@@ -11,20 +11,21 @@ interface ItineraryItem {
   venue: string
   type: 'concert' | 'dj' | 'poetry' | 'comedy' | 'band' | 'singer'
   image?: string
+  link?: string
 }
 
 // @ts-ignore
 const ITINERARY: ItineraryItem[] = [
-  { date: '24 April', day: 'Friday', performer: 'Snehi Live', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/snehi-live.webp' },
-  { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.webp' },
-  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.webp' },
-  { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.webp' },
-  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'singer', image: '/images/artists/anuj-sharma.webp' },
-  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.webp' },
-  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.webp' },
-  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.webp' },
-  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/simar-kaur.webp' },
-  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-ana.webp' },
+  { date: '24 April', day: 'Friday', performer: 'Snehi Live', time: '8:00 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/snehi-live.webp', link: 'https://www.instagram.com/p/DWlytUXk2V8/' },
+  { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '9:30 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.webp', link: 'https://www.instagram.com/p/DQnynP2EQRA/?hl=en' },
+  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '1:00 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.webp' },
+  { date: '25 April', day: 'Saturday', performer: 'Neptune', time: '6:00 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.webp', link: 'https://www.instagram.com/p/DF0prm6y7CB/' },
+  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8:00 PM Onwards', venue: 'BBC', type: 'singer', image: '/images/artists/anuj-sharma.webp', link: 'https://www.instagram.com/p/DW0fV3AEiCa/' },
+  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '9:30 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.webp', link: 'https://www.instagram.com/p/DWzSpYFDGWw/' },
+  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '3:00 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.webp', link: 'https://www.instagram.com/officialrajatchauhan/' },
+  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '6:00 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.webp', link: 'https://www.instagram.com/himachalpradeshpoliceorchestra/' },
+  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8:00 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/simar-kaur.webp', link: 'https://www.instagram.com/p/DVgLN6ZEWhN/' },
+  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '9:30 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-ana.webp', link: 'https://www.instagram.com/p/C-Rgn8QpcMD/' },
 ]
 
 // @ts-ignore
@@ -326,7 +327,6 @@ export default function OverlayUI() {
             <div className="itin-timeline">
               {filteredDays.map((date, dayIdx) => {
                 const dayItems = ITINERARY.filter((i) => i.date === date)
-                const isComingSoon = date !== '24 April'
 
                 return (
                   <div key={date} className="itin-day-block reveal-item" data-delay={String(300 + dayIdx * 150)}>
@@ -344,20 +344,20 @@ export default function OverlayUI() {
 
                     {/* Performance cards */}
                     <div className="itin-performances">
-                      {isComingSoon ? (
-                        <div className="itin-perf-card" style={{ '--accent': '#666', padding: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' } as React.CSSProperties}>
-                          <h3 className="itin-perf-name" style={{ margin: 0, fontSize: '1.5rem', opacity: 0.7 }}>COMING SOON</h3>
-                          <div className="itin-perf-stripe" style={{ background: '#666' }} />
-                        </div>
-                      ) : (
-                        dayItems.map((item, idx) => (
-                          <div
-                            key={idx}
-                            className="itin-perf-card"
-                            data-delay={String(400 + dayIdx * 150 + idx * 80)}
-                            style={{
-                              '--accent': TYPE_COLORS[item.type],
-                            } as React.CSSProperties}
+                      {dayItems.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="itin-perf-card"
+                          data-delay={String(400 + dayIdx * 150 + idx * 80)}
+                          style={{
+                            '--accent': TYPE_COLORS[item.type],
+                            cursor: item.link ? 'pointer' : 'default',
+                          } as React.CSSProperties}
+                          onClick={() => {
+                            if (item.link) {
+                              window.open(item.link, '_blank');
+                            }
+                          }}
                           >
                             {/* Artist image */}
                             {item.image && (
@@ -392,8 +392,7 @@ export default function OverlayUI() {
                             {/* Decorative accent stripe */}
                             <div className="itin-perf-stripe" style={{ background: TYPE_COLORS[item.type] }} />
                           </div>
-                        ))
-                      )}
+                      ))}
                     </div>
                   </div>
                 )
