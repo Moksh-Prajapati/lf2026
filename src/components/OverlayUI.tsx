@@ -55,7 +55,7 @@ const SPONSORS = [
   { name: 'Nescafe', logo: '/images/sponsors/nescafe.png' },
   { name: 'Amul', logo: '/images/sponsors/amul.png' },
   { name: 'Pepsi', logo: '/images/sponsors/pepsi.png' },
-  { name: 'Dominos', logo: '/images/sponsors/dominos.png' },
+  { name: 'Dominos', logo: '/images/sponsors/Dominos.webp' },
   { name: 'Food Dude', logo: '/images/sponsors/food-dude.png' },
   { name: 'Stargaze', logo: '/images/sponsors/stargaze.png' },
   { name: 'Black Crab', logo: '/images/sponsors/blackcrab.png' },
@@ -513,13 +513,25 @@ export default function OverlayUI() {
                 <img src="/images/sponsors/LitTeaChokha.png" alt="Lit Tea Chokha" className="sponsor-menu-logo" />
                 <h3>Lit Tea Chokha</h3>
               </a>
-              <a href="/images/sponsors/BelgianWaffleMenu.png" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
+              <a href="/images/sponsors/BelgianWaffleMenu.webp" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
                 <img src="/images/sponsors/BelgianWaffle.png" alt="Belgian Waffles" className="sponsor-menu-logo" />
                 <h3>Belgian Waffles</h3>
               </a>
               <a href="/images/sponsors/NescafeMenu.png" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
                 <img src="/images/sponsors/nescafe.png" alt="Nescafe" className="sponsor-menu-logo" />
                 <h3>Nescafe</h3>
+              </a>
+              <a href="/images/sponsors/DominosMenu.webp" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
+                <img src="/images/sponsors/Dominos.webp" alt="Nescafe" className="sponsor-menu-logo" />
+                <h3>Dominos</h3>
+              </a>
+              <a href="/images/sponsors/KhaoGaliCafeMenu.webp" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
+                <img src="/images/sponsors/KhaoGaliCafe.webp" alt="Nescafe" className="sponsor-menu-logo" />
+                <h3>Khao Gali Cafe</h3>
+              </a>
+              <a href="/images/sponsors/FreshBasketMenu.webp" target="_blank" rel="noopener noreferrer" className="sponsor-menu-card">
+                <img src="/images/sponsors/FreshBasket.webp" alt="Nescafe" className="sponsor-menu-logo" />
+                <h3>Fresh basket</h3>
               </a>
             </div>
           </div>
